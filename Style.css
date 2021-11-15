@@ -11,10 +11,15 @@
   --very-light-gray: hsl(0, 0%, 95%); /* (background, headings, buttons) */
 }
 
-* {
+*,
+*::before,
+*::after {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
+}
+
+* {
   font-size: 15px;
   font-family: "Lexend Deca", sans-serif;
 }
@@ -23,16 +28,74 @@
   display: flex;
   flex-direction: column;
   padding: 50px 30px;
-  gap: 20px;
+  border-radius: 30px;
 }
 
-.container h2 {
+.container article:first-child {
+  border-radius: 10px 10px 0 0;
+}
+
+.container article:last-child {
+  border-radius: 0 0 10px 10px;
+}
+
+.model__icon {
+  margin-top: 40px;
+  margin-left: 20px;
+}
+
+.model__title {
   text-transform: uppercase;
   font-family: "Big Shoulders Display", cursive;
+  font-size: 2rem;
+  margin-top: 20px;
+  margin-left: 20px;
 }
 
-.sedan {
-  background-color: ;
+.model__detail {
+  margin-top: 20px;
+  margin-left: 20px;
+  color: var(--transparent-white);
+}
+
+.model__sendan {
+  background-color: var(--bright-orange);
+}
+
+.model__suv {
+  background-color: var(--dark-cyan);
+}
+
+.model__luxury {
+  background-color: var(--very-dark-cyan);
+}
+
+.btn {
+  border: none;
+  background-color: var(--very-light-gray);
+  border: var(--very-light-gray) solid;
+  padding: 1.2rem;
+  border-radius: 50px;
+  margin: 20px 0 40px 20px;
+  cursor: pointer;
+}
+
+.model__sendan .btn {
+  color: var(--bright-orange);
+}
+
+.model__suv .btn {
+  color: var(--dark-cyan);
+}
+
+.model__luxury .btn {
+  color: var(--very-dark-cyan);
+}
+
+.btn:hover {
+  background-color: transparent;
+  transition: 0.2s ease-in-out;
+  color: var(--transparent-white);
 }
 
 .attribution {
@@ -41,4 +104,8 @@
 }
 .attribution a {
   color: hsl(228, 45%, 44%);
+}
+
+.attribution a:hover {
+  opacity: 0.7;
 }
